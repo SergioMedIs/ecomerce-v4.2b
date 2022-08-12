@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import { accounting } from 'accounting';
 import { render } from '@testing-library/react';
 import products from './../product-data';
+import { IconButton } from '@mui/material';
+import { AddShoppingCart } from "@material-ui/icons";
+
 
 
 
@@ -34,6 +37,9 @@ export default function Product({
         <Typography variant="body2" color="text.secondary">
           {accounting.formatMoney(price, "$")}
        </Typography>
+       <IconButton aria-label='Add to Cart' >
+          <AddShoppingCart fontSize='large' paddinLeft='45'/>
+        </IconButton>
       </CardContent>
       <CardActions>
 {/*         <Button size="small">Share</Button>

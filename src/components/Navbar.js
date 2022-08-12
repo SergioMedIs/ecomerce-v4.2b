@@ -8,12 +8,15 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Badge } from '@mui/material';
 import { ShoppingCart } from '@material-ui/icons';
+/* import { makeStyles } from '@material-ui/core'; */
 
 
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" >
+      <AppBar 
+      position="fixed" 
+      color='primary'>
         <Toolbar>
           <IconButton
             size="large"
