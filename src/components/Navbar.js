@@ -30,6 +30,11 @@ export default function Navbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             CyberZilla
           </Typography>
+          <IconButton>
+          <Typography color={'whitesmoke'} variant="h6" component="div" sx={{ flexGrow: -1}}>
+            SingUp
+          </Typography>
+          </IconButton>
           <Button color="inherit">
           </Button>
           <IconButton aria-label='show cart items' color='inherit'>
