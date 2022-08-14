@@ -84,6 +84,7 @@ export default function SignIn() {
               name="key"
               autoComplete="card"
               autoFocus
+              type="password"
             />
             </Item>
         </Grid>
@@ -112,6 +113,7 @@ export default function SignIn() {
               name="key"
               autoComplete="null"
               autoFocus
+              type="password"
             />
             </Item>
         </Grid>
@@ -122,10 +124,10 @@ export default function SignIn() {
           required
           fullWidth
           id="date"
-          label="Fecha de Expiracion"
           name="date"
           autoComplete="null"
           autoFocus
+          type="date"
         />
         </Item>
         </Grid>
