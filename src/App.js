@@ -17,15 +17,12 @@ function App() {
    <Navbar/>
    <Routes>
     <Route path='/home' element={<Products/>}/>
-  <Route path='/SingUp' element={<SingUp/>}/>
+    <Route path='/home' element={<HeroM/>}/>
+    <Route path='/SingUp' element={<SingUp/>}/>
     <Route path='/carrito' element={<CarCheck/>}/>
     <Route path='/Pago01' element={<PaymentForm/>}/> 
     </Routes> 
-  {/*     <Products/>
-       <HeroM/>
-       <SingUp/>
-    <CarCheck/> */}
-  {/*   <PaymentForm/> */}
+ 
        </div>
  
 

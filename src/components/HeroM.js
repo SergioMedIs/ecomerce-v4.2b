@@ -6,7 +6,7 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 
-export default function TitlebarImageList() {
+export default function HeroM() {
   return (
     <div paddin='15'>
     <ImageList sx={{ width: 3100, height: 420 }}>

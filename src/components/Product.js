@@ -10,6 +10,11 @@ import { render } from '@testing-library/react';
 import products from './../product-data';
 import { IconButton } from '@mui/material';
 import { AddShoppingCart } from "@material-ui/icons";
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import ListSubheader from '@mui/material/ListSubheader';
+import InfoIcon from '@mui/icons-material/Info';
 
 
 

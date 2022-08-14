@@ -8,7 +8,11 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Badge } from '@mui/material';
 import { ShoppingCart } from '@material-ui/icons';
+import {Link} from 'react-router-dom'
+import SingUp from './../components/SingUp';
+import CarCheck from './CarCheck';
 /* import { makeStyles } from '@material-ui/core'; */
+import { styled } from '@mui/material/styles';
 
 
 export default function Navbar() {
@@ -27,20 +31,25 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
+          
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            CyberZilla
+            <Link style={{textDecoration:"none", color:"white"}} to='/home'>CyberZilla</Link> 
           </Typography>
-          <IconButton>
+         
+          <IconButton> <Link style={{textDecoration:"none", color:"white"}} to={"/SingUp"} >
           <Typography color={'whitesmoke'} variant="h6" component="div" sx={{ flexGrow: -1}}>
-            SingUp
+         SingUp
           </Typography>
+          </Link>
           </IconButton>
           <Button color="inherit">
           </Button>
           <IconButton aria-label='show cart items' color='inherit'>
+           <Link style={{textDecoration:"none", color:"white"}} to={"/CarCheck"} >
                   <Badge badgeContent={2} color='secondary'>
                     <ShoppingCart fontSize='large' color='white' />
                   </Badge>
+                  </Link>
                 </IconButton>
         </Toolbar>
       </AppBar>
