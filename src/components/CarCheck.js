@@ -15,8 +15,7 @@ import accounting from 'accounting';
 import price from './../product-data'
 import CheckoutCard from './CheckoutCard' 
 import {Link} from 'react-router-dom'
-import {Total} from './Total'
-
+import Total from './Total'
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -65,9 +64,7 @@ export default function CarCheck() {
       
       </Typography>
     </CardContent>
-    <CardActions> <Link style={{textDecoration:"none", color:"white"}} to={'/Pago01'}>
-      <Button size="small">Continuar</Button>
-      </Link>
+    <CardActions> 
     </CardActions>
   </React.Fragment>
 
