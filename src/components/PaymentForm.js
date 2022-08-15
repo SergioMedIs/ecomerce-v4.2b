@@ -14,6 +14,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+
 
 
 
@@ -133,10 +135,13 @@ export default function SignIn() {
         </Grid>
 
       </Grid>
+      <Button margin={15}  >Pagar</Button>
 
         <Copyright sx={{ mt: 8, mb: 4 }} />
+        
       </Container>
     </ThemeProvider>
+   
     </Box>
   );
 }

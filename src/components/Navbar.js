@@ -45,7 +45,7 @@ export default function Navbar() {
           <Button color="inherit">
           </Button>
           <IconButton aria-label='show cart items' color='inherit'>
-           <Link style={{textDecoration:"none", color:"white"}} to={"/CarCheck"} >
+           <Link style={{textDecoration:"none", color:"white"}} to={"/carrito"} >
                   <Badge badgeContent={2} color='secondary'>
                     <ShoppingCart fontSize='large' color='white' />
                   </Badge>

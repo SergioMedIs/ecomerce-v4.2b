@@ -13,6 +13,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import accounting from 'accounting';
 import price from './../product-data'
+import CheckoutCard from './CheckoutCard' 
+import {Link} from 'react-router-dom'
+import {Total} from './Total'
+
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -22,14 +27,65 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function CarCheck() {
+  
+
   return (
-    <Box sx={{ flexGrow: 1 , margin:22}}>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+    <Box container Spacing={2} margin="45px" paddingTop={25} alignContent='left' sx={{ }}>
+    <Grid container Spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {products.map(product=>(
         <Grid item xs={2} sm={4} md={4} >
-        <Product key={product=id} product={product} />
+        <CheckoutCard key={product=id} product={product} />
         </Grid>
+        
         ))}
+      
+     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid item xs={6}>
+
+  <Box
+    component="span"
+    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+  >
+
+  </Box>
+
+
+  <React.Fragment>
+    <CardContent alignContent='right'>
+      <Typography float='right' sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+       TOTAL
+      </Typography>
+       <Total/>
+      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        +iva
+      </Typography>
+      <Typography variant="body2">
+       
+        <br />
+      
+      </Typography>
+    </CardContent>
+    <CardActions> <Link style={{textDecoration:"none", color:"white"}} to={'/Pago01'}>
+      <Button size="small">Continuar</Button>
+      </Link>
+    </CardActions>
+  </React.Fragment>
+
+
+
+        </Grid>
+   
+      </Grid>
+
+
+    </Grid>
+  </Box>
+  
+);
+}
+   /*   <Box sx={{ flexGrow: 1 , margin:22}}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+      
         <Grid item xs={8}>
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -45,7 +101,7 @@ export default function CarCheck() {
         <Typography variant="body2">
         el precio ya incluye iva
           <br />
-{/*           {'"a benevolent smile"'} */}
+          
         </Typography>
       </CardContent>
       <CardActions>
@@ -54,8 +110,13 @@ export default function CarCheck() {
     </Card>
 
 
+        <br/>
         </Grid>
+        {products.map(product=>(
+        <Grid item xs={2} sm={4} md={4} >
+        <Product key={product=id} product={product} />
+        </Grid>
+        ))}
       </Grid>
-    </Box>
-  );
-}
+    </Box> */
+

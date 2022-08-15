@@ -10,11 +10,12 @@ import { render } from '@testing-library/react';
 import products from './../product-data';
 import { IconButton } from '@mui/material';
 import { AddShoppingCart } from "@material-ui/icons";
+import DeleteOutlineTwoToneIcon from '@mui/icons-material/DeleteOutlineTwoTone';
 
 
 
 
-export default function Product({
+export default function CheckoutCard({
   product: { id, name, productType, image, price, description },
 }) {
 
@@ -22,25 +23,23 @@ export default function Product({
     
     <Card  sx={{ maxWidth: 345 }}>
       <CardMedia
+      aling="center"
         component="img"
         alt="product"
         height="140"
         image= {image}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+         <Typography align='center' gutterBottom variant="h5" component="div">
     {name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-      {description} 
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
+
+        <Typography fontSize={27} align='center' variant="body2" color="text.secondary">
           {accounting.formatMoney(price, "$")}
        </Typography>
-       <IconButton aria-label='Add to Cart' >
-          <AddShoppingCart fontSize='large' paddinLeft='45'/>
+       <IconButton  aria-label='Add to Cart' >
+          <DeleteOutlineTwoToneIcon align='center' fontSize='large' paddinLeft='45'/>
         </IconButton>
-      </CardContent>
+    
       <CardActions>
 
       </CardActions>
