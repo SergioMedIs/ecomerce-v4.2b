@@ -13,9 +13,11 @@ import SingUp from './../components/SingUp';
 import CarCheck from './CarCheck';
 /* import { makeStyles } from '@material-ui/core'; */
 import { styled } from '@mui/material/styles';
+import { useStateValue } from './../StateProvider';
 
 
 export default function Navbar() {
+  const [{basket},dispatch]=useStateValue();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar 
@@ -46,7 +48,7 @@ export default function Navbar() {
           </Button>
           <IconButton aria-label='show cart items' color='inherit'>
            <Link style={{textDecoration:"none", color:"white"}} to={"/carrito"} >
-                  <Badge badgeContent={2} color='secondary'>
+                  <Badge badgeContent={basket?.length} color='secondary'>
                     <ShoppingCart fontSize='large' color='white' />
                   </Badge>
                   </Link>

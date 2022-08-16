@@ -10,6 +10,9 @@ import { render } from '@testing-library/react';
 import products from './../product-data';
 import { IconButton } from '@mui/material';
 import { AddShoppingCart } from "@material-ui/icons";
+import { dispatch } from 'react';
+import { actionTypes } from '../reducer';
+import { useStateValue } from '../StateProvider';
 
 
 
@@ -17,7 +20,21 @@ import { AddShoppingCart } from "@material-ui/icons";
 export default function Product({
   product: { id, name, productType, image, price, description },
 }) {
+  const [{basket},dispatch]=useStateValue();
+const addToBasket=()=>{
+  dispatch({
+    type : actionTypes.ADD_TO_BASKET,
+    item:{
+     id,
+     name,
+     productType,
+     image,
+     description,
+     price,
 
+    }
+  })
+}
   return (
     
     <Card  sx={{ maxWidth: 345 }}>
@@ -37,7 +54,8 @@ export default function Product({
         <Typography variant="body2" color="text.secondary">
           {accounting.formatMoney(price, "$")}
        </Typography>
-       <IconButton aria-label='Add to Cart' >
+       <IconButton aria-label='Add to Cart' onClick={addToBasket}>
+        
           <AddShoppingCart fontSize='large' paddinLeft='45'/>
         </IconButton>
       </CardContent>

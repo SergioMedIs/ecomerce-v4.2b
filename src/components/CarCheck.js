@@ -12,10 +12,13 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import accounting from 'accounting';
-import price from './../product-data'
+
 import CheckoutCard from './CheckoutCard' 
 import {Link} from 'react-router-dom'
 import Total from './Total'
+import { useStateValue } from './../StateProvider';
+import {basket} from './../reducer'
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -26,14 +29,14 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function CarCheck() {
-  
+  const [{basket},dispatch]=useStateValue();
 
   return (
     <Box container Spacing={2} margin="45px" paddingTop={25} alignContent='left' sx={{ }}>
     <Grid container Spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {products.map(product=>(
+        {basket?.map(item=>(
         <Grid item xs={2} sm={4} md={4} >
-        <CheckoutCard key={product=id} product={product} />
+        <CheckoutCard key={item=id} product={item} />
         </Grid>
         
         ))}

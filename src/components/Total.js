@@ -1,20 +1,20 @@
 import React from "react";
 import accounting from "accounting";
 import { Button } from "@mui/material";
-import { makeStyles } from '@material-ui/core';
 import {Link }from 'react-router-dom'
+import {getBasketTotal} from './../reducer'
+import { useStateValue, dispatch }   from '../StateProvider';
 
-const useStyles = makeStyles((theme)=>({
 
-}))
 
 export default function Total() {
     
-
+    const [{basket}]=useStateValue();
     return (
         <div>
 
-          {accounting.formatMoney(50,"$")}
+<h5>TOTAL :</h5>  
+{accounting.formatMoney(getBasketTotal(basket),"$")}
            
           <Link style={{textDecoration:"none", color:"white"}} to={'/Pago01'}>
       <Button size="small">Continuar</Button>

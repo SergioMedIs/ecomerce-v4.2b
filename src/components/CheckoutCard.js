@@ -11,14 +11,22 @@ import products from './../product-data';
 import { IconButton } from '@mui/material';
 import { AddShoppingCart } from "@material-ui/icons";
 import DeleteOutlineTwoToneIcon from '@mui/icons-material/DeleteOutlineTwoTone';
-
+import { useStateValue } from '../StateProvider';
+import { actionTypes } from '../reducer';
+import {removeItem} from '../reducer';
 
 
 
 export default function CheckoutCard({
   product: { id, name, productType, image, price, description },
-}) {
+  
 
+
+}) {
+  const [{basket},dispatch]=useStateValue();
+  const removeItem =()=> dispatch({
+    type: actionTypes.REMOVE_ITEM, id: id,
+  })
   return (
     
     <Card  sx={{ maxWidth: 345 }}>
@@ -37,7 +45,7 @@ export default function CheckoutCard({
           {accounting.formatMoney(price, "$")}
        </Typography>
        <IconButton  aria-label='Add to Cart' >
-          <DeleteOutlineTwoToneIcon align='center' fontSize='large' paddinLeft='45'/>
+          <DeleteOutlineTwoToneIcon onClick={removeItem} align='center' fontSize='large' paddinLeft='45'/>
         </IconButton>
     
       <CardActions>
