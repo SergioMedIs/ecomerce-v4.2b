@@ -4,8 +4,8 @@ import Product from './components/Product';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import HeroM from './components/HeroM'
-import SingUp from './components/SingUp'
-import SingIn from './components/SingIn'
+import SingUp from './components/SingIn'
+import SingIn from './components/SingUp'
 import CarCheck from './components/CarCheck'
 import PaymentForm from './components/PaymentForm'
 import { BrowserRouter } from 'react-router-dom';
@@ -19,10 +19,10 @@ function App() {
    <Routes>
     <Route path='/home' element={<Products/>}/>
     <Route path='/home' element={<HeroM/>}/>
-    <Route path='/SingUp' element={<SingUp/>}/>
+    <Route path='/SignIn' element={<SingUp/>}/>
     <Route path='/carrito' element={<CarCheck/>}/>
     <Route path='/Pago01' element={<PaymentForm/>}/>
-    <Route path='/registro' element={<SingIn/>}/> 
+    <Route path='/SignUp' element={<SingIn/>}/> 
     </Routes> 
  
        </div>

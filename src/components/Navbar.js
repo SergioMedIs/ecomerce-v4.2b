@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Badge } from '@mui/material';
 import { ShoppingCart } from '@material-ui/icons';
 import {Link} from 'react-router-dom'
-import SingUp from './../components/SingUp';
+import SingUp from './SingIn';
 import CarCheck from './CarCheck';
 /* import { makeStyles } from '@material-ui/core'; */
 import { styled } from '@mui/material/styles';
@@ -38,9 +38,9 @@ export default function Navbar() {
             <Link style={{textDecoration:"none", color:"white"}} to='/home'>CyberZilla</Link> 
           </Typography>
          
-          <IconButton> <Link style={{textDecoration:"none", color:"white"}} to={"/SingUp"} >
+          <IconButton> <Link style={{textDecoration:"none", color:"white"}} to={"/SignUp"} >
           <Typography color={'whitesmoke'} variant="h6" component="div" sx={{ flexGrow: -1}}>
-         SingUp
+         SignUp
           </Typography>
           </Link>
           </IconButton>
