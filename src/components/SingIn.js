@@ -14,6 +14,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props: any) {
   return (
@@ -39,7 +42,19 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };
+  let navigate = useNavigate();
+  const[email,setEmail]= useState("");
+const[password,setPassword]=useState("");
+const SignUp=(e)=>{
+  e.preventDefault();
+  getAuth.createUserWithEmailAndPassword(email,password).then((Auth)=>{
+    if(getAuth){
+      navigate("./home", { replace: true });
+    }
 
+  }).catch(err=>alert(err.message))
+
+}
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -63,6 +78,8 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
+              value={email}
+              onChange={e=>setEmail(e.target.value)}
               id="email"
               label="Correo Electronico"
               name="email"
@@ -70,6 +87,8 @@ export default function SignIn() {
               autoFocus
             />
             <TextField
+                  value={password}
+                  onChange={e=>setPassword(e.target.value)}
               margin="normal"
               required
               fullWidth

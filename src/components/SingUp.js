@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link} from 'react-router-dom';
 import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
  
 function Copyright(props) {
   return (
@@ -31,12 +32,15 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-
+  let navigate = useNavigate();
   const[email,setEmail]= useState("");
 const[password,setPassword]=useState("");
 const SignUp=(e)=>{
   e.preventDefault();
-  getAuth.createUserWithEmailAndPassord(email,password).then((Auth)=>{
+  getAuth.createUserWithEmailAndPassword(email,password).then((Auth)=>{
+    if(getAuth){
+      navigate("../home", { replace: true });
+    }
 
   }).catch(err=>alert(err.message))
 
